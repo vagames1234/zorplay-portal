@@ -1,7 +1,7 @@
 const BACKEND_BASE_URL = "https://zorplay-backend.onrender.com";
 
 const subscribeBtn = document.getElementById("subscribeBtn");
-const unsubscribeBtn = document.getElementById("unsubscribeBtn");
+//const unsubscribeBtn = document.getElementById("unsubscribeBtn");
 const message = document.getElementById("message");
 
 
@@ -27,87 +27,87 @@ subscribeBtn.addEventListener("click", function () {
 // UNSUBSCRIBE
 // --------------------------------------------------
 
-unsubscribeBtn.addEventListener("click", async function () {
+// unsubscribeBtn.addEventListener("click", async function () {
 
-    const msisdnInput =
-        document.getElementById("msisdnInput");
+//     const msisdnInput =
+//         document.getElementById("msisdnInput");
 
-    const msisdn =
-        msisdnInput.value.trim();
+//     const msisdn =
+//         msisdnInput.value.trim();
 
-    if (!msisdn) {
+//     if (!msisdn) {
 
-        message.textContent =
-            "Please enter your Moov Gabon mobile number.";
+//         message.textContent =
+//             "Please enter your Moov Gabon mobile number.";
 
-        return;
-    }
-
-
-    message.textContent =
-        "Processing unsubscribe request...";
-
-    unsubscribeBtn.disabled = true;
+//         return;
+//     }
 
 
-    try {
+//     message.textContent =
+//         "Processing unsubscribe request...";
 
-        const response = await fetch(
-            `${BACKEND_BASE_URL}/unsubscribe`,
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    msisdn: msisdn
-                })
-            }
-        );
+//     unsubscribeBtn.disabled = true;
 
 
-        const data = await response.json();
+//     try {
 
-        console.log(
-            "Unsubscribe response:",
-            data
-        );
+//         const response = await fetch(
+//             `${BACKEND_BASE_URL}/unsubscribe`,
+//             {
+//                 method: "POST",
+
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+
+//                 body: JSON.stringify({
+//                     msisdn: msisdn
+//                 })
+//             }
+//         );
 
 
-        if (response.ok) {
+//         const data = await response.json();
 
-            message.textContent =
-                "Unsubscribe request processed successfully.";
+//         console.log(
+//             "Unsubscribe response:",
+//             data
+//         );
 
-            msisdnInput.value = "";
 
-        } else {
+//         if (response.ok) {
 
-           message.textContent =
-    data.response?.errorDesc ||
-    data.response?.errorDesc ||
-    data.message ||
-    data.error ||
-    "Unable to process the unsubscribe request.";
+//             message.textContent =
+//                 "Unsubscribe request processed successfully.";
 
-        }
+//             msisdnInput.value = "";
 
-    } catch (error) {
+//         } else {
 
-        console.error(
-            "Unsubscribe error:",
-            error
-        );
+//            message.textContent =
+//     data.response?.errorDesc ||
+//     data.response?.errorDesc ||
+//     data.message ||
+//     data.error ||
+//     "Unable to process the unsubscribe request.";
 
-        message.textContent =
-            "Unable to connect to the server. Please try again.";
+//         }
 
-    } finally {
+//     } catch (error) {
 
-        unsubscribeBtn.disabled = false;
+//         console.error(
+//             "Unsubscribe error:",
+//             error
+//         );
 
-    }
+//         message.textContent =
+//             "Unable to connect to the server. Please try again.";
 
-});
+//     } finally {
+
+//         unsubscribeBtn.disabled = false;
+
+//     }
+
+// });
