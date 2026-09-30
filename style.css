@@ -195,3 +195,161 @@ button:disabled {
 .unsubscribe-form button {
     width: 100%;
 }
+
+
+/* ==========================================
+   SUBSCRIPTION CONFIRMATION MODAL
+   ========================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 9999;
+}
+
+
+/* Show modal */
+
+.modal-overlay.show {
+    display: flex;
+}
+
+
+/* Modal box */
+
+.confirmation-modal {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    animation: modalAppear 0.2s ease;
+}
+
+
+/* Modal title */
+
+.confirmation-modal h2 {
+    font-size: 22px;
+
+    margin-bottom: 15px;
+
+    color: #111827;
+}
+
+
+/* Modal message */
+
+.confirmation-modal p {
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* Buttons container */
+
+.modal-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: center;
+}
+
+
+/* Modal buttons */
+
+.modal-buttons button {
+    flex: 1;
+
+    padding: 13px 20px;
+}
+
+
+/* Cancel */
+
+.cancel-btn {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+
+/* Confirm */
+
+.confirm-btn {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+/* Modal animation */
+
+@keyframes modalAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .confirmation-modal {
+        padding: 25px 20px;
+    }
+
+    .confirmation-modal h2 {
+        font-size: 20px;
+    }
+
+    .confirmation-modal p {
+        font-size: 15px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-buttons button {
+        width: 100%;
+    }
+
+}

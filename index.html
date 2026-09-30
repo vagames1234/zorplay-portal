@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -41,33 +42,7 @@
             </section>
 
 
-           <!-- <section class="unsubscribe-card">
-
-    <h3>Already subscribed?</h3>
-
-    <p>
-        Enter your Moov Gabon mobile number
-        to unsubscribe from Zorplay Games.
-    </p>
-
-    <div class="unsubscribe-form">
-
-        <input
-            type="tel"
-            id="msisdnInput"
-            placeholder="Example: 241XXXXXXXX"
-            autocomplete="tel"
-        >
-
-        <button
-            id="unsubscribeBtn"
-            class="secondary-btn">
-            Unsubscribe
-        </button>
-
-    </div>
-
-</section> -->
+            <!-- Unsubscribe removed from Portal -->
 
 
             <div id="message"
@@ -92,7 +67,46 @@
 
     </div>
 
+
+    <!-- ==========================================
+         SUBSCRIPTION CONFIRMATION MODAL
+         ========================================== -->
+
+    <div id="confirmationModal"
+         class="modal-overlay">
+
+        <div class="confirmation-modal">
+
+            <h2>Confirm Subscription</h2>
+
+            <p>
+                Are you sure you want to subscribe
+                to this service for 150 XOF/day?
+            </p>
+
+            <div class="modal-buttons">
+
+                <button
+                    id="cancelSubscribeBtn"
+                    class="cancel-btn">
+                    Cancel
+                </button>
+
+                <button
+                    id="confirmSubscribeBtn"
+                    class="confirm-btn">
+                    Confirm
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
     <script src="app.js"></script>
 
 </body>
+
 </html>
